@@ -97,40 +97,239 @@ body {
   border-radius: 10px;
 }
 
+.project-card {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.project-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.project-card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
 /* ABOUT */
 .about {
-  padding: 40px 20px;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-content {
   text-align: center;
+  max-width: 600px;
+}
+
+.about-content h2 {
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+}
+
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  margin-bottom: 15px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skills li {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* SERVICES */
 .services {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
+}
+
+.services p {
+  margin-bottom: 40px;
+  color: #666;
 }
 
 .service-list {
   display: grid;
-  gap: 10px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.service {
-  padding: 15px;
+.service-card {
+  padding: 30px 20px;
+  background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 60px 20px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.testimonial-list {
+  display: grid;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.testimonial cite {
+  font-weight: bold;
+  color: #666;
 }
 
 /* CONTACT */
 .contact {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
+}
+
+.contact p {
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  resize: vertical;
 }
 
 /* FOOTER */
 footer {
+  background: #333;
+  color: white;
+  padding: 30px 20px;
   text-align: center;
-  padding: 20px;
-  background: #f5f5f5;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
 }
 
 /* RESPONSIVE (DESKTOP) */
@@ -143,11 +342,43 @@ footer {
     font-size: 40px;
   }
 
+  .about-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+
+  .skills ul {
+    justify-content: flex-start;
+  }
+
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .service-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contact-info {
+    text-align: left;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
